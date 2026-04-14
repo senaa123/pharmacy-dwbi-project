@@ -1,0 +1,29 @@
+# Visual Studio / SSDT
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.dotnet
+
+# Logs / temp
+*.log
+*.tmp
+*.cache
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Database backups
+*.bak
+
+# Power BI temp
+*.pbix.autorecover
+
+# OS files
+Thumbs.db
+.DS_Store
+
+docs/

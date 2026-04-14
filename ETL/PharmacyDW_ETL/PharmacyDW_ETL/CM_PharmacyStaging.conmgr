@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-LS0G58P_MSSQLDEV.PharmacyStaging"
+  DTS:DTSID="{E8E56870-50F3-4F97-AA42-CD6D4EB4EE10}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-LS0G58P\MSSQLDEV;Initial Catalog=PharmacyStaging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-PharmacyDW_ETL-{E8E56870-50F3-4F97-AA42-CD6D4EB4EE10}DESKTOP-LS0G58P\MSSQLDEV.PharmacyStaging;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

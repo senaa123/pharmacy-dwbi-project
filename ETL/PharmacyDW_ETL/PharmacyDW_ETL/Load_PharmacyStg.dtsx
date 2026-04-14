@@ -1,0 +1,827 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/28/2026 12:08:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LS0G58P"
+  DTS:CreatorName="DESKTOP-LS0G58P\ASUS"
+  DTS:DTSID="{0669BCE4-A278-4908-AC99-246E33FAF595}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{383FE57B-8F6A-4633-A58B-AC547270CB38}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_Stg_ProductEnrichment"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{40f7a74c-03d2-4016-8510-28ed2a29d16d}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Load_Stg_ProductEnrichment"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input].Columns[KD_OBAT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="KD_OBAT"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[KD_OBAT]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input].Columns[NAMA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NAMA"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[NAMA]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input].Columns[Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Category"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input].Columns[Subcategory]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Subcategory"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Subcategory]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input].Columns[BrandGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BrandGroup"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[BrandGroup]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input].Columns[Manufacturer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Manufacturer"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Manufacturer]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[KD_OBAT_u]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[KD_OBAT_u]"
+                      name="KD_OBAT_u"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[KD_OBAT]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[ProductName_u]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="150"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[ProductName_u]"
+                      name="ProductName_u"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[NAMA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Category_u]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Category_u]"
+                      name="Category_u"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Category]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Subcategory_u]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Subcategory_u]"
+                      name="Subcategory_u"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Subcategory]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[BrandGroup_u]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[BrandGroup_u]"
+                      name="BrandGroup_u"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[BrandGroup]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Manufacturer_u]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Manufacturer_u]"
+                      name="Manufacturer_u"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Manufacturer]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="{B6793034-2E04-4E13-A9FA-DFDADE4304DC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[KD_OBAT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[KD_OBAT]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[KD_OBAT]"
+                      name="KD_OBAT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[NAMA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NAMA]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[NAMA]"
+                      name="NAMA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Subcategory]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Subcategory]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Subcategory]"
+                      name="Subcategory"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[BrandGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BrandGroup]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[BrandGroup]"
+                      name="BrandGroup"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Manufacturer]"
+                      length="50"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].Columns[Manufacturer]"
+                      name="Manufacturer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[KD_OBAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="KD_OBAT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NAMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NAMA" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Subcategory]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Subcategory" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BrandGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BrandGroup" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Manufacturer" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StgProductEnrichment]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{E8E56870-50F3-4F97-AA42-CD6D4EB4EE10}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-LS0G58P_MSSQLDEV.PharmacyStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KD_OBAT_u]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="KD_OBAT_u"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KD_OBAT]"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[KD_OBAT_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductName_u]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="ProductName_u"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[ProductName_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Category_u]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Category_u"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Category_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Subcategory_u]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Subcategory_u"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subcategory]"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Subcategory_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BrandGroup_u]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="BrandGroup_u"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandGroup]"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[BrandGroup_u]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Manufacturer_u]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Manufacturer_u"
+                      externalMetadataColumnId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output].Columns[Manufacturer_u]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KD_OBAT]"
+                      dataType="wstr"
+                      length="50"
+                      name="KD_OBAT" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="150"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      dataType="wstr"
+                      length="100"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Subcategory]"
+                      dataType="wstr"
+                      length="100"
+                      name="Subcategory" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrandGroup]"
+                      dataType="wstr"
+                      length="100"
+                      name="BrandGroup" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer]"
+                      dataType="wstr"
+                      length="100"
+                      name="Manufacturer" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_Stg_ProductEnrichment.Paths[Data Conversion Output]"
+              endId="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT_Load_Stg_ProductEnrichment.Paths[Flat File Source Output]"
+              endId="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Clear_StgProductEnrichment"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8E89068B-6A03-4530-842D-A353D2AB790E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Clear_StgProductEnrichment"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E8E56870-50F3-4F97-AA42-CD6D4EB4EE10}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.StgProductEnrichment;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{31F198E3-FED8-43B4-952F-7DA0E07D525B}"
+      DTS:From="Package\SQL_Clear_StgProductEnrichment"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Load_Stg_ProductEnrichment" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="243.2,41.6"
+          Id="Package\DFT_Load_Stg_ProductEnrichment"
+          TopLeft="152.499994946023,150.999999367197" />
+        <NodeLayout
+          Size="240,41.6"
+          Id="Package\SQL_Clear_StgProductEnrichment"
+          TopLeft="152.499991667768,42.4666663713588" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="273.299993306895,84.0666663713588">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.9333329958386"
+              Start="0,0"
+              End="0,59.4333329958386">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.4333329958386" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_Stg_ProductEnrichment">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination"
+          TopLeft="388.999994203448,168.999997481704" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\DFT_Load_Stg_ProductEnrichment\Flat File Source"
+          TopLeft="157.49999139458,71.066666172478" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\DFT_Load_Stg_ProductEnrichment\Data Conversion"
+          TopLeft="400.999994024634,70.9999989420176" />
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_ProductEnrichment.Paths[Flat File Source Output]"
+          TopLeft="308.69999139458,91.8333325572478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.3000026300545,0"
+              Start="0,0"
+              End="84.8000026300545,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.8000026300545,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Load_Stg_ProductEnrichment.Paths[Data Conversion Output]"
+          TopLeft="476.799994114041,112.599998942018">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3999985396862"
+              Start="0,0"
+              End="0,48.8999985396862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8999985396862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_Stg_ProductEnrichment\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
